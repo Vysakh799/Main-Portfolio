@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vysakh E</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Option 1: Include in HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body >
+    <div class="main row p-5 d-flex justify-content-evenly">
+        <div class="col-lg-2 sidebar">
+            <div class="col-lg-12 personal_photo d-flex justify-content-center p-2 pt-4 flex-column">
+                <div class="col-lg-12 photo d-flex justify-content-center">
+                    <img src="{{ url_for('static', filename='images/5355.jpg') }}" alt="" class="image-fluid w-75">
+                </div>
+                <div class="col-lg-12 p-det d-flex justify-content-center flex-column">
+                    <div class="col-lg-12 d-flex justify-content-center name">
+                        <p>Vysakh E</p>
+                    </div>
+                        <a href="https://drive.google.com/file/d/1gjcYUi8T6IVkllBNzNY57e-g2m0yHfYE/view?usp=drive_link" class="btn btn-warning w-3" style="margin-top: -10px;" target="_blank
+                        ">Download CV</a>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <hr style="color: rgb(148, 145, 145) ;">
+            </div>
+            <div class="col-lg-12 email d-flex p-2">
+                <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-envelope"></i></div>
+                <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
+                    <span style="font-weight: 500; color: grey; opacity: 0.5;">Email</span><br>
+                    <a href="mailto:vysakh@gmail.com" style="text-decoration: none; color: white;" target="_blank">vysakh7995@gmail.com</a>
+                </div>
+            </div>
+            <div class="col-lg-12 phone d-flex p-2">
+                <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-phone"></i></div>
+                <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
+                    <span style="font-weight: 500; color: grey; opacity: 0.5;">Phone</span><br>
+                    <a href="#" style="text-decoration: none; color: white;">+917994634647</a>
+                </div>
+            </div>
+            <div class="col-lg-12 github d-flex p-2">
+                <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-github"></i></div>
+                <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
+                    <span style="font-weight: 500; color: grey; opacity: 0.5;">Github</span><br>
+                    <a href="https://github.com/Vysakh799" style="text-decoration: none; color: white; font-size: 12px;" target="_blank">https://github.com/Vysakh799</a>
+                </div>
+            </div>
+            <div class="col-lg-12 linkdin d-flex p-2">
+                <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-linkedin"></i></div>
+                <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
+                    <span style="font-weight: 500; color: grey; opacity: 0.5;">Linkdin</span><br>
+                    <a href="https://www.linkedin.com/in/vysakh7995/" style="text-decoration: none; color: white; font-size: 12px;" target="_blank">www.linkedin.com/in/vysakh7995</a>
+                </div>
+            </div>
+            <div class="col-lg-12 location d-flex p-2">
+                <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-geo-alt"></i></div>
+                <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
+                    <span style="font-weight: 500; color: grey; opacity: 0.5;">Location<br>
+                    <a href="" style="text-decoration: none; color: white; font-size: 12px;" target="_blank">Ramanattukara<br>Calicut,Kerala,India</a>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-lg-1"></div>    -->
+        <div class="col-lg-9  main_area">
+                <div class="row">
+                <div class="col-lg-6" >
+                </div>
+                <div class="nav col-lg-6 d-flex justify-content-evenly align-items-center">
+                <button class="btn btn-link " >Home</button>
+                <button class="btn btn-link " >Resume</button>
+                <button class="btn btn-link " >Portfolio</button>
+                <button class="btn btn-link " >Contact</button>
+                </div> 
+                <div class="col-lg-12 p-4" id="home"> 
+                    <div class="about col-lg-12">
+                        <div class="heading">
+                            <p id="heading">About Me</p>
+                        </div>
+                        <div class="para text-light" style="margin-top: -10px;">
+                            Hello! I'm Vysakh, a passionate and dedicated Python full-stack developer with a strong background in creating dynamic and responsive web applications. With extensive experience in both front-end and back-end development, I specialize in crafting seamless user experiences and robust server-side logic.
+                        </div>
+                    </div>
+                    <div class="whatido col-lg-12 mt-3" id="whatido">
+                        <div class="heading">
+                            <p id="heading col-lg-12">What I Do</p>
+                        </div>
+                        <div class="content-bxs col-lg-12">
+                            <div class="col-lg-12 ">
+                                <div class="row p-4 d-flex justify-content-evenly">
+                                    <div class="col-lg-5 d-flex bx">
+                                        <div class="col-lg-2 logo_wtdi text-warning  p-3 d-flex justify-content-center align-items-center">
+                                            <i class="bi bi-code-slash" style="font-size: 35px;"></i>
+                                        </div>
+                                        <div class="col-lg-10  p-3">
+                                            <div class="head col-lg-12">
+                                                <span style="font-size: 21px; font-weight: 700;">Front-end Development</span><br>
+                                                <span>Html,Css,JavaScript & React</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 d-flex bx">
+                                        <div class="col-lg-2 logo_wtdi text-warning  p-3 d-flex justify-content-center align-items-center">
+                                            <i class="bi bi-hdd-stack-fill" style="font-size: 35px;"></i>
+                                        </div>
+                                        <div class="col-lg-10  p-3">
+                                            <div class="head col-lg-12">
+                                                <span style="font-size: 21px; font-weight: 700;">Back-end Development</span><br>
+                                                <span>Python & Django</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-bxs col-lg-12">
+                                <div class="col-lg-12 ">
+                                    <div class="row p-4 d-flex justify-content-evenly" >
+                                        <div class="col-lg-5 d-flex bx">
+                                            <div class="col-lg-2 logo_wtdi text-warning  p-3 d-flex justify-content-center align-items-center">
+                                                <i class="bi bi-server" style="font-size: 35px;"></i>
+                                            </div>
+                                            <div class="col-lg-10  p-3">
+                                                <div class="head col-lg-12">
+                                                    <span style="font-size: 21px; font-weight: 700;">Database</span><br>
+                                                    <span>Mysql, Sqlit3 & MongoDB</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 d-flex bx">
+                                            <div class="col-lg-2 logo_wtdi text-warning  p-3 d-flex justify-content-center align-items-center">
+                                                <i class="bi bi-arrow-down-up" style="font-size: 35px;"></i>
+                                            </div>
+                                            <div class="col-lg-10  p-3">
+                                                <div class="head col-lg-12">
+                                                    <span style="font-size: 21px; font-weight: 700;">API Development</span><br>
+                                                    <span>Django Rest Framework</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

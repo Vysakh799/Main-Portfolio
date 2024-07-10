@@ -1,0 +1,71 @@
+body{
+    margin: 0px;
+    /* overflow: hidden; */
+}
+.main{
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-bottom: 15px;
+    padding-right: 10px;
+    background-color: rgb(27, 26, 26) ;
+    /* overflow: hidden; */
+    min-height: 100vh;
+}
+
+.sidebar{
+    background-color: rgb(50, 50, 51);
+    border-radius: 15px;
+}
+.main_area{
+    background-color: rgb(50, 50, 51);
+    /* overflow: hidden; */
+    border-radius: 15px;
+
+}
+.nav button{
+    color: white;
+    text-decoration: none;
+}
+.nav button:hover{
+    color: orange;
+    transition: ease-in 0.2s;
+    font-size: 17px;
+}
+.nav{
+    background-color: rgb(72, 71, 71);
+    border-radius: 0px 15px 0px 15px;
+    height: 50px;
+    
+}
+
+.personal_photo{
+    /* background-color: red; */
+    
+     color: white;
+}
+.personal_photo img{
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 30px 90px;
+}
+.name{
+    /* background-color: blue; */
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-top: 5px;
+}
+
+.heading p{
+    font-size: 30px; font-weight: 600; color: white;
+}
+
+.head{
+    color: white;
+}
+.bx{
+    border: 2px solid rgb(236, 159, 17);
+    border-radius: 25px;
+}
+.bx:hover{
+    background-color: rgb(61, 61, 62);
+}
