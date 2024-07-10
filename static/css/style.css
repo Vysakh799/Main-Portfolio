@@ -45,7 +45,7 @@ body{
 }
 .personal_photo img{
     border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 30px 90px;
+    box-shadow: rgba(0, 0, 0, 1) 0px 30px 90px;
 }
 .name{
     /* background-color: blue; */
