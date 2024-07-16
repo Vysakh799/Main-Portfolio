@@ -1,6 +1,6 @@
 from flask import Flask,render_template,redirect,request,url_for,flash,session
 from flask_mail import Mail,Message
-import pyautogui as pag
+# import pyautogui as pag
 # from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -18,7 +18,7 @@ mail=Mail(app)
 
 @app.route('/')
 def index():
-    flash("!! Messege sent successfull I will contact you as soon as possible !!","success")
+    # flash("!! Messege sent successfull I will contact you as soon as possible !!","success")
 
     return render_template('index.html')
 

@@ -1,6 +1,6 @@
 body{
     margin: 0px;
-    /* overflow: hidden; */
+    overflow-x: hidden;
     background-color: rgb(27, 26, 26) ;
 
 
@@ -194,23 +194,51 @@ label{
 }
 
 .alert-box{
-
-    background-color: rgb(27, 26, 26) ;
-
+    position: absolute;
+    top: px;
 }
-
-
+.skill-head{
+    font-size: 21px; font-weight: 700;
+}
+.logo_wtdi{
+    font-size: 35px;
+}
 
 @media (max-width:450px) {
     .drop-down-bt .btn1{
         display: block;
         transition: ease 2s;
     }
-    .contacts{
+    #info{
         display: none;
     }
     .nav{
     border-radius: 15px 15px 15px 15px;
     }
+    .skill-head{
+        font-size: 18px;
+    }
+    .skill-desc{
+        font-size: 14px;
+    }
+    .logo_wtdi{
+        font-size: 33px;
+    }
+    body{
+        overflow-x: hidden;
+    }
 
+}
+@media (max-width:400px){
+    .nav button{
+        font-size: 14px;
+    }
+    body{
+        overflow-x: hidden;
+    }
+}
+@media (max-width:380px){
+    .nav button{
+        font-size: 13px;
+    }
 }

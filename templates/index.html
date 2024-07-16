@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vysakh E</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon2.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Option 1: Include in HTML -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         function about(){
             document.getElementById('about_nav').style.color="orange"
@@ -52,399 +53,415 @@
             document.getElementById('portfolio').style.display='none'
             document.getElementById('contact').style.display='block'
         }
-        function show(){
-            document.getElementById('info').style.display='block'
-            document.getElementById('cnt1').style.display='none'
-            document.getElementById('cnt2').style.display='block'
-        }
-        function hide(){
-            document.getElementById('info').style.display='none'
-            document.getElementById('cnt1').style.display='block'
-            document.getElementById('cnt2').style.display='none'
-        }
+        // function show(){
+        //     document.getElementById('info').style.display='block'
+        //     document.getElementById('cnt1').style.display='none'
+        //     document.getElementById('cnt2').style.display='block'
+        // }
+        // function hide(){
+        //     document.getElementById('info').style.display='none'
+        //     document.getElementById('cnt1').style.display='block'
+        //     document.getElementById('cnt2').style.display='none'
+        // }
+        $(document).ready(function(){
+            $("#cnt1").click(function(){
+                $("#info").show(1000);    
+                $("#cnt2").show();
+                $("#cnt1").hide();
+            });
+        });
+        $(document).ready(function(){
+            $("#cnt2").click(function(){
+                $("#info").hide(1000);
+                $("#cnt2").hide();
+                $("#cnt1").show();
+            });
+        });
     </script>
 
 </head>
 <body>
-    <div class="col-lg-12 alert-box">
-        {% with messages = get_flashed_messages()%}
-                      {% if messages%}
-                          {% for message in messages%}
-                          <div class="alert alert-success alert-dismissible fade show art-bx" role="alert">
-                            <strong>{{ message }}</strong> 
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                              <!-- <span aria-hidden="true">&times</span> -->
-                            </button>
-                          </div>
-                          {%endfor%}
-                          {%endif%}
-                          {%endwith%}
-    </div>
-    <div class="main row p-5 d-flex justify-content-evenly">
-        <div class="col-lg-2 sidebar">
-            <div class="col-lg-12 drop-down-bt d-flex justify-content-end">
-                <button class="btn btn-link text-warning btn1" onclick="show()" id="cnt1"><i class="bi bi-chevron-down"></i></button>
-                <button class="btn btn-link text-warning btn1" onclick="hide()" id="cnt2" style="display: none;"><i class="bi bi-chevron-up"></i></button>
-            </div>
-            <div class="col-lg-12 personal_photo d-flex justify-content-center p-2 pt-4 flex-column">
-                <div class="col-lg-12 photo d-flex justify-content-center">
-                    <img src="{{ url_for('static', filename='images/dp1.jpeg') }}" alt="" class="image-fluid w-75">
-                </div>
-                <div class="col-lg-12 p-det d-flex justify-content-center flex-column">
-                    <div class="col-lg-12 d-flex justify-content-center name">
-                        <p>Vysakh E</p><br>
-                    </div>
-                    <div class="proff col-lg-12 d-flex justify-content-center">
-                        <p>Web Developer</p>
-                    </div>
-                        <a href="https://drive.google.com/file/d/1gjcYUi8T6IVkllBNzNY57e-g2m0yHfYE/view?usp=drive_link" class="btn btn-warning w-3" style="margin-top: -10px;" target="_blank
-                        ">Download CV</a>
-                </div>
-            </div>
-            
-            <div class="contacts" id="info">
-                <div class="col-lg-12">
-                    <hr style="color: rgb(148, 145, 145) ;">
-                </div>
-                <div class="col-lg-12 email d-flex p-2">
-                    <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-envelope"></i></div>
-                    <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
-                        <span style="font-weight: 500; color: grey; opacity: 0.5;">Email</span><br>
-                        <a href="mailto:vysakh@gmail.com" style="text-decoration: none; color: white;" target="_blank">vysakh7995@gmail.com</a>
-                    </div>
-                </div>
-                <div class="col-lg-12 phone d-flex p-2">
-                    <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-phone"></i></div>
-                    <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
-                        <span style="font-weight: 500; color: grey; opacity: 0.5;">Phone</span><br>
-                        <a href="#" style="text-decoration: none; color: white;">+917994634647</a>
-                    </div>
-                </div>
-                <div class="col-lg-12 github d-flex p-2">
-                    <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-github"></i></div>
-                    <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
-                        <span style="font-weight: 500; color: grey; opacity: 0.5;">Github</span><br>
-                        <a href="https://github.com/Vysakh799" style="text-decoration: none; color: white; font-size: 12px;" target="_blank">https://github.com/Vysakh799</a>
-                    </div>
-                </div>
-                <div class="col-lg-12 linkdin d-flex p-2">
-                    <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-linkedin"></i></div>
-                    <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
-                        <span style="font-weight: 500; color: grey; opacity: 0.5;">Linkdin</span><br>
-                        <a href="https://www.linkedin.com/in/vysakh7995/" style="text-decoration: none; color: white; font-size: 12px;" target="_blank">www.linkedin.com/in/vysakh7995</a>
-                    </div>
-                </div>
-                <div class="col-lg-12 location d-flex p-2">
-                    <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-geo-alt"></i></div>
-                    <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
-                        <span style="font-weight: 500; color: grey; opacity: 0.5;">Location<br>
-                        <a href="" style="text-decoration: none; color: white; font-size: 12px;" target="_blank">Ramanattukara<br>Calicut,Kerala,India</a>
-                    </div>
-                </div>
-            </div>
+    <div class="main ">
+        <div class="col-lg-5 alert-box p-3 d-flex justify-content-center">
+            {% with messages = get_flashed_messages()%}
+                          {% if messages%}
+                              {% for message in messages%}
+                              <div class="alert alert-success alert-dismissible fade show art-bx" role="alert">
+                                <strong>{{ message }}</strong> 
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                  <!-- <span aria-hidden="true">&times</span> -->
+                                </button>
+                              </div>
+                              {%endfor%}
+                              {%endif%}
+                              {%endwith%}
         </div>
-        <!-- <div class="col-lg-1"></div>    -->
-        <div class="col-lg-9  main_area">
-                <div class="row">
-                <div class="col-lg-6" >
+        <div class="content row p-5 d-flex justify-content-evenly">
+            <div class="col-lg-2 sidebar">
+                <div class="col-lg-12 drop-down-bt d-flex justify-content-end">
+                    <button class="btn btn-link text-warning btn1"  id="cnt1"><i class="bi bi-chevron-down"></i></button>
+                    <button class="btn btn-link text-warning btn1"  id="cnt2" style="display: none;"><i class="bi bi-chevron-up"></i></button>
                 </div>
-                <div class="nav col-lg-6 d-flex justify-content-evenly align-items-center flex-nowrap">
-                <button class="btn btn-link" onclick="about()" id="about_nav" >About</button>
-                <button class="btn btn-link " onclick="resume()" id="resume_nav" >Resume</button>
-                <button class="btn btn-link " onclick="portfolio()" id="portfolio_nav">Portfolio</button>
-                <button class="btn btn-link " onclick="contact()" id="contact_nav" >Contact</button>
-                </div> 
-                <div class="col-lg-12 p-4" id="about"> 
-                    <div class="about col-lg-12">
-                        <div class="heading">
-                            <p id="heading">About Me</p>
+                <div class="col-lg-12 personal_photo d-flex justify-content-center p-2 pt-4 flex-column">
+                    <div class="col-lg-12 photo d-flex justify-content-center">
+                        <img src="{{ url_for('static', filename='images/dp1.jpeg') }}" alt="" class="image-fluid w-75">
+                    </div>
+                    <div class="col-lg-12 p-det d-flex justify-content-center flex-column">
+                        <div class="col-lg-12 d-flex justify-content-center name">
+                            <p>Vysakh E</p><br>
                         </div>
-                        <div class="para text-light" style="margin-top: -10px;">
-                            Hello! I'm Vysakh, a passionate and dedicated Python full-stack developer with a strong background in creating dynamic and responsive web applications. With extensive experience in both front-end and back-end development, I specialize in crafting seamless user experiences and robust server-side logic.
+                        <div class="proff col-lg-12 d-flex justify-content-center">
+                            <p>Web Developer</p>
+                        </div>
+                            <a href="https://drive.google.com/file/d/1gjcYUi8T6IVkllBNzNY57e-g2m0yHfYE/view?usp=drive_link" class="btn btn-warning w-3" style="margin-top: -10px;" target="_blank
+                            ">Download CV</a>
+                    </div>
+                </div>
+                
+                <div class="contacts" id="info">
+                    <div class="col-lg-12">
+                        <hr style="color: rgb(148, 145, 145) ;">
+                    </div>
+                    <div class="col-lg-12 email d-flex p-2">
+                        <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-envelope"></i></div>
+                        <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
+                            <span style="font-weight: 500; color: grey; opacity: 0.5;">Email</span><br>
+                            <a href="mailto:vysakh@gmail.com" style="text-decoration: none; color: white;" target="_blank">vysakh7995@gmail.com</a>
                         </div>
                     </div>
-                    <div class="whatido col-lg-12 mt-3" id="whatido">
-                        <div class="heading">
-                            <p id="heading col-lg-12">What I Do</p>
+                    <div class="col-lg-12 phone d-flex p-2">
+                        <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-phone"></i></div>
+                        <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
+                            <span style="font-weight: 500; color: grey; opacity: 0.5;">Phone</span><br>
+                            <a href="#" style="text-decoration: none; color: white;">+917994634647</a>
                         </div>
-                        <div class="content-bxs col-lg-12 d-flex justify-content-evenly">
-                            <div class="row p-5 col-lg-12 d-flex justify-content-center g-4">
-                                    <div class="col-lg-5 d-flex bx">
-                                        <div class="col-lg-2 logo_wtdi text-warning  p-3 d-flex justify-content-center align-items-center">
-                                            <i class="bi bi-code-slash" style="font-size: 35px;"></i>
-                                        </div>
-                                        <div class="col-lg-10  p-3">
-                                            <div class="head col-lg-12">
-                                                <span style="font-size: 21px; font-weight: 700;">Front-end Development</span><br>
-                                                <span>Html,Css,JavaScript & React</span>
+                    </div>
+                    <div class="col-lg-12 github d-flex p-2">
+                        <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-github"></i></div>
+                        <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
+                            <span style="font-weight: 500; color: grey; opacity: 0.5;">Github</span><br>
+                            <a href="https://github.com/Vysakh799" style="text-decoration: none; color: white; font-size: 12px;" target="_blank">https://github.com/Vysakh799</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 linkdin d-flex p-2">
+                        <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-linkedin"></i></div>
+                        <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
+                            <span style="font-weight: 500; color: grey; opacity: 0.5;">Linkdin</span><br>
+                            <a href="https://www.linkedin.com/in/vysakh7995/" style="text-decoration: none; color: white; font-size: 12px;" target="_blank">www.linkedin.com/in/vysakh7995</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 location d-flex p-2">
+                        <div class="logo " style="font-size: 23px; color: orange;"><i class="bi bi-geo-alt"></i></div>
+                        <div class="desc" style=" margin-top: 8px; margin-left: 10px; font-size: 15px;">
+                            <span style="font-weight: 500; color: grey; opacity: 0.5;">Location<br>
+                            <a href="" style="text-decoration: none; color: white; font-size: 12px;" target="_blank">Ramanattukara<br>Calicut,Kerala,India</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-lg-1"></div>    -->
+            <div class="col-lg-9  main_area">
+                    <div class="row">
+                    <div class="col-lg-6" >
+                    </div>
+                    <div class="nav col-lg-6 d-flex justify-content-evenly align-items-center flex-nowrap">
+                        <button class="btn btn-link" onclick="about()" id="about_nav" >About</button>
+                        <button class="btn btn-link " onclick="resume()" id="resume_nav" >Resume</button>
+                        <button class="btn btn-link " onclick="portfolio()" id="portfolio_nav">Portfolio</button>
+                        <button class="btn btn-link " onclick="contact()" id="contact_nav" >Contact</button>
+                    </div> 
+                    <div class="col-lg-12 p-4" id="about"> 
+                        <div class="about col-lg-12">
+                            <div class="heading">
+                                <p id="heading">About Me</p>
+                            </div>
+                            <div class="para text-light" style="margin-top: -10px;">
+                                Hello! I'm Vysakh, a passionate and dedicated Python full-stack developer with a strong background in creating dynamic and responsive web applications. With extensive experience in both front-end and back-end development, I specialize in crafting seamless user experiences and robust server-side logic.
+                            </div>
+                        </div>
+                        <div class="whatido col-lg-12 " id="whatido">
+                            <div class="heading">
+                                <p id="heading col-lg-12">What I Do</p>
+                            </div>
+                            <div class="content-bxs col-lg-12 d-flex justify-content-evenly">
+                                <div class="row col-lg-12 d-flex justify-content-evenly g-4">
+                                        <div class="col-lg-5 d-flex bx">
+                                            <div class="col-lg-2 logo_wtdi text-warning  p-3 d-flex justify-content-center align-items-center">
+                                                <i class="bi bi-code-slash" ></i>
+                                            </div>
+                                            <div class="col-lg-10  p-3">
+                                                <div class="head col-lg-12">
+                                                    <span class="skill-head">Front-end Development</span><br>
+                                                    <span class="skill-desc">Html,Css,JavaScript & React</span>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div class="col-lg-5 d-flex bx ">
+                                                <div class="col-lg-2 logo_wtdi text-warning  p-3 d-flex justify-content-center align-items-center">
+                                                    <i class="bi bi-hdd-stack-fill" style="font-size: 35px;"></i>
+                                                </div>
+                                                <div class="col-lg-10  p-3">
+                                                    <div class="head col-lg-12">
+                                                        <span class="skill-head">Back-end Development</span><br>
+                                                        <span class="skill-desc">Python & Django</span>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    <div class="col-lg-5 d-flex bx ">
+                                                <div class="col-lg-2 logo_wtdi text-warning  p-3 d-flex justify-content-center align-items-center">
+                                                    <i class="bi bi-server" style="font-size: 35px;"></i>
+                                                </div>
+                                                <div class="col-lg-10  p-3">
+                                                    <div class="head col-lg-12">
+                                                        <span class="skill-head">Database</span><br>
+                                                        <span class="skill-desc">Mysql, Sqlit3 & MongoDB</span>
+                                                    </div>
+                                                </div>
                                     </div>
                                     <div class="col-lg-5 d-flex bx ">
-                                            <div class="col-lg-2 logo_wtdi text-warning  p-3 d-flex justify-content-center align-items-center">
-                                                <i class="bi bi-hdd-stack-fill" style="font-size: 35px;"></i>
-                                            </div>
-                                            <div class="col-lg-10  p-3">
-                                                <div class="head col-lg-12">
-                                                    <span style="font-size: 21px; font-weight: 700;">Back-end Development</span><br>
-                                                    <span>Python & Django</span>
+                                                <div class="col-lg-2 logo_wtdi text-warning  p-3 d-flex justify-content-center align-items-center">
+                                                    <i class="bi bi-arrow-down-up" style="font-size: 35px;"></i>
                                                 </div>
-                                            </div>
+                                                <div class="col-lg-10  p-3">
+                                                    <div class="head col-lg-12">
+                                                        <span class="skill-head">API Development</span><br>
+                                                        <span class="skill-desc">Django Rest Framework</span>
+                                                    </div>
+                                                </div>
                                     </div>
-                                <div class="col-lg-5 d-flex bx ">
-                                            <div class="col-lg-2 logo_wtdi text-warning  p-3 d-flex justify-content-center align-items-center">
-                                                <i class="bi bi-server" style="font-size: 35px;"></i>
-                                            </div>
-                                            <div class="col-lg-10  p-3">
-                                                <div class="head col-lg-12">
-                                                    <span style="font-size: 21px; font-weight: 700;">Database</span><br>
-                                                    <span>Mysql, Sqlit3 & MongoDB</span>
-                                                </div>
-                                            </div>
+                                    
                                 </div>
-                                <div class="col-lg-5 d-flex bx ">
-                                            <div class="col-lg-2 logo_wtdi text-warning  p-3 d-flex justify-content-center align-items-center">
-                                                <i class="bi bi-arrow-down-up" style="font-size: 35px;"></i>
-                                            </div>
-                                            <div class="col-lg-10  p-3">
-                                                <div class="head col-lg-12">
-                                                    <span style="font-size: 21px; font-weight: 700;">API Development</span><br>
-                                                    <span>Django Rest Framework</span>
-                                                </div>
-                                            </div>
-                                </div>
-                                
-                            </div>
-                        </div>    
-                    </div>
-                    <div class="hobbies col-lg-12">
-                        <div class="heading col-lg-12">
-                            <p>Hobbies</p>
+                            </div>    
                         </div>
-                        <div class="col-lg-12" style="font-size: 18px; color: white;">
-                            <ul>
-                                <li>Reading</li>
-                                <li>Macro photography</li>
+                        <div class="hobbies col-lg-12">
+                            <div class="heading col-lg-12">
+                                <p>Hobbies</p>
+                            </div>
+                            <div class="col-lg-12" style="font-size: 18px; color: white;">
+                                <ul>
+                                    <li>Reading</li>
+                                    <li>Macro photography</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 p-4" id="resume" style="display: none;"> 
+                    <div class="resume col-lg-12">
+                        <div class="heading">
+                            <p id="heading">Resume</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="head d-flex col-lg-2 ">
+                            <div class="icon ">
+                                <i class="bi bi-book"></i>
+                            </div>
+                            <div class="head1 d-flex justify-content-center align-items-center">
+                                <p>Education</p>
+                            </div>
+                        </div>
+                        <div class="education col-lg-12" style="color: white;">
+                            <ul class="list">
+                                <li>
+                                    <span class="ins_ED">JDT POLYTECHNIC COLLEGE, Vellimadkunn, Calicut</span><br>
+                                    <span class="ins_TM">2020-23</span><br>
+                                    <span class="ins_CR">Computer Engineering</span>
+                                </li>
+                                <li>
+                                    <span class="ins_ED">GMHSS CU CAMPUS , Malappuram</span><br>
+                                    <span class="ins_TM">2018-20</span><br>
+                                    <span class="ins_CR">HSS | Computer Science</span>
+                                </li>
+                                <li>
+                                    <span class="ins_ED">Nivedhitha Vidhya Peedom, Ramanattukara, Calicut</span><br>
+                                    <span class="ins_TM">2018</span><br>
+                                    <span class="ins_CR">SSLC</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="head d-flex col-lg-2 ">
+                            <div class="icon ">
+                                <i class="bi bi-person"></i>
+                            </div>
+                            <div class="head1 d-flex justify-content-center align-items-center">
+                                <p>Experience</p>
+                            </div>
+                        </div>
+                        <div class="experience col-lg-12" style="color: white;">
+                            <ul class="list">
+                                <li>
+                                    <span class="ins_ED">Synnefo Solutions</span><br>
+                                    <span class="ins_TM">2024 Feb - Currently</span><br>
+                                    <span class="ins_CR">Internship in Python Fullstack Development</span>
+                                </li>
+                                <!-- <li>
+                                    <span class="ins_ED">GMHSS CU CAMPUS , Malappuram</span><br>
+                                    <span class="ins_TM">2018-20</span><br>
+                                    <span class="ins_CR">HSS | Computer Science</span>
+                                </li>
+                                <li>
+                                    <span class="ins_ED">Nivedhitha Vidhya Peedom, Ramanattukara, Calicut</span><br>
+                                    <span class="ins_TM">2018</span><br>
+                                    <span class="ins_CR">SSLC</span>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-12 p-4" id="resume" style="display: none;"> 
-                <div class="resume col-lg-12">
-                    <div class="heading">
-                        <p id="heading">Resume</p>
+                <div class="col-lg-12 p-4" id="portfolio" style="display: none;"> 
+                    <div class="portfolio col-lg-12">
+                        <div class="heading">
+                            <p id="heading">Portfolio</p>
+                        </div>
+                    </div>
+                    <div class="grids col-lg-12 ">
+                        <div class="first-row col-lg-12 d-flex justify-content-evenly flex-wrap">
+                            <div class="col-lg-4 item1 ">
+                                <div class="image col-lg-12 p-2 item11">
+                                    <img src="{{ url_for('static', filename='images/works/ecommerce.png') }}" alt="" class="image-fluid w-100">
+                                    <div class="w_name col-lg-12 d-flex justify-content-center text-light">
+                                        <span>Ecommerce | Django</span>
+                                    </div>
+                                    <div class="github_bt col-lg-3 p-3">
+                                        <a href="https://github.com/Vysakh799/E-commerce.git" class="btn btn-dark opacity-100" target="_blank"><i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-4 item1">
+                                <div class="image col-lg-12 p-2 item11">
+                                    <img src="{{ url_for('static', filename='images/works/bookmyshow.png') }}" alt="" class="image-fluid w-100">
+                                    <div class="w_name col-lg-12 d-flex justify-content-center text-light">
+                                        <span>BookMyShow | Django</span>
+                                    </div>
+                                    <div class="github_bt col-lg-3 p-3">
+                                        <a href="https://github.com/Vysakh799/BookMyShow-Clone.git" class="btn btn-dark opacity-100" target="_blank"><i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-4 item1">
+                                <div class="image col-lg-12 p-2 item11">
+                                    <img src="{{ url_for('static', filename='images/works/employee.png') }}" alt="" class="image-fluid w-100">
+                                    <div class="w_name col-lg-12 d-flex justify-content-center text-light">
+                                        <span>Employee Management | Django</span>
+                                    </div>
+                                    <div class="github_bt col-lg-3  p-3">
+                                        <a href="https://github.com/Vysakh799/Django-Employee-management-system.git" class="btn btn-dark opacity-100" target="_blank"><i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="first-row col-lg-12 d-flex justify-content-evenly flex-wrap mt-4">
+                            <div class="col-lg-4 item1 ">
+                                <div class="image col-lg-12 p-2 item11">
+                                    <img src="{{ url_for('static', filename='images/works/nike.png') }}" alt="" class="image-fluid w-100">
+                                    <div class="w_name col-lg-12 d-flex justify-content-center text-light">
+                                        <span>Nike Clone </span>
+                                    </div>
+                                    <div class="github_bt col-lg-3 p-3">
+                                        <a href="https://github.com/Vysakh799/Nike-clone.git" class="btn btn-dark opacity-100" target="_blank"><i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-4 item1">
+                                <div class="image col-lg-12 p-2 item11">
+                                    <img src="{{ url_for('static', filename='images/works/W3schools.png') }}" alt="" class="image-fluid w-100">
+                                    <div class="w_name col-lg-12 d-flex justify-content-center text-light">
+                                        <span>W3 Schools Clone </span>
+                                    </div>
+                                    <div class="github_bt col-lg-3 p-3">
+                                        <a href="https://github.com/Vysakh799/W3school-clone.git" class="btn btn-dark opacity-100 " target="_blank"><i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-4 item1">
+                                <div class="image col-lg-12 p-2 item11 ">
+                                    <img src="{{ url_for('static', filename='images/works/youtube.png') }}" alt="" class="image-fluid w-100">
+                                    <div class="w_name col-lg-12 d-flex justify-content-center text-light">
+                                        <span>Youtube clone</span>
+                                    </div>
+                                    <div class="github_bt col-lg-3 p-3">
+                                        <a href="https://github.com/Vysakh799/Youtube-clone.git"  class="btn btn-dark opacity-100 " target="_blank"><i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <div class="head d-flex col-lg-2 ">
-                        <div class="icon ">
-                            <i class="bi bi-book"></i>
-                        </div>
-                        <div class="head1 d-flex justify-content-center align-items-center">
-                            <p>Education</p>
+                <div class="col-lg-12 p-4" id="contact" style="display: none;"> 
+                    <div class="contact col-lg-12">
+                        <div class="heading">
+                            <p id="heading">Contact</p>
                         </div>
                     </div>
-                    <div class="education col-lg-12" style="color: white;">
-                        <ul class="list">
-                            <li>
-                                <span class="ins_ED">JDT POLYTECHNIC COLLEGE, Vellimadkunn, Calicut</span><br>
-                                <span class="ins_TM">2020-23</span><br>
-                                <span class="ins_CR">Computer Engineering</span>
-                            </li>
-                            <li>
-                                <span class="ins_ED">GMHSS CU CAMPUS , Malappuram</span><br>
-                                <span class="ins_TM">2018-20</span><br>
-                                <span class="ins_CR">HSS | Computer Science</span>
-                            </li>
-                            <li>
-                                <span class="ins_ED">Nivedhitha Vidhya Peedom, Ramanattukara, Calicut</span><br>
-                                <span class="ins_TM">2018</span><br>
-                                <span class="ins_CR">SSLC</span>
-                            </li>
-                        </ul>
+                    <div class="form-group col-lg-6  ">
+                        <form action="../contact_me" method="POST" >
+                            <div class="col-lg-12">
+                                <label for="name">Name</label><br>
+                                <input type="text" name="name" class="inp w-100" style="background-color: transparent; color: white;" required>
+                            </div>
+                            <div class="col-lg-12 mt-3">
+                                <label for="name">Email</label><br>
+                                <input type="email" name="email" class=" w-100" style="background-color: transparent; color: white;" pattern="[a-z][a-z0-9]+@gmail.com" required>
+                            </div>
+                            <div class="col-lg-12 mt-3">
+                                <label for="name">Subject</label><br>
+                                <input type="text" name="subject" class=" w-100" style="background-color: transparent; color: white;" required>
+                            </div>
+                            <div class="col-lg-12 mt-3">
+                                <label for="name">Message</label><br>
+                                <textarea name="message" id="" style="background-color: transparent; color: white;" class="w-100" required></textarea>
+                            </div>
+                            <div class="col-lg-12 mt-3">
+                                <input type="submit" class="frm-bt w-100" value="Send" >
+                            </div>
+                        </form>
+    
                     </div>
-                    <div class="head d-flex col-lg-2 ">
-                        <div class="icon ">
-                            <i class="bi bi-person"></i>
-                        </div>
-                        <div class="head1 d-flex justify-content-center align-items-center">
-                            <p>Experience</p>
-                        </div>
+                    <div class="line col-lg-12">
+                        <hr style="color: grey;">
                     </div>
-                    <div class="experience col-lg-12" style="color: white;">
-                        <ul class="list">
-                            <li>
-                                <span class="ins_ED">Synnefo Solutions</span><br>
-                                <span class="ins_TM">2024 Feb - Currently</span><br>
-                                <span class="ins_CR">Internship in Python Fullstack Development</span>
-                            </li>
-                            <!-- <li>
-                                <span class="ins_ED">GMHSS CU CAMPUS , Malappuram</span><br>
-                                <span class="ins_TM">2018-20</span><br>
-                                <span class="ins_CR">HSS | Computer Science</span>
-                            </li>
-                            <li>
-                                <span class="ins_ED">Nivedhitha Vidhya Peedom, Ramanattukara, Calicut</span><br>
-                                <span class="ins_TM">2018</span><br>
-                                <span class="ins_CR">SSLC</span>
-                            </li> -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12 p-4" id="portfolio" style="display: none;"> 
-                <div class="portfolio col-lg-12">
-                    <div class="heading">
-                        <p id="heading">Portfolio</p>
-                    </div>
-                </div>
-                <div class="grids col-lg-12 ">
-                    <div class="first-row col-lg-12 d-flex justify-content-evenly flex-wrap">
-                        <div class="col-lg-4 item1 ">
-                            <div class="image col-lg-12 p-2 item11">
-                                <img src="{{ url_for('static', filename='images/works/ecommerce.png') }}" alt="" class="image-fluid w-100">
-                                <div class="w_name col-lg-12 d-flex justify-content-center text-light">
-                                    <span>Ecommerce | Django</span>
-                                </div>
-                                <div class="github_bt col-lg-3 p-3">
-                                    <a href="https://github.com/Vysakh799/E-commerce.git" class="btn btn-dark opacity-100" target="_blank"><i class="bi bi-github"></i></a>
-                                </div>
-                            </div>
-                            
+                    <div class="col-lg-12 d-flex flex-column align-items-center">
+                        <div class="address d-flex justify-content-center text-center">
+                            <p>Vysakham, Omasseryparamb, Near Poovannur mosque<br>Ramanattukara, Calicut, Kerala<br>India</p>
                         </div>
-                        <div class="col-lg-4 item1">
-                            <div class="image col-lg-12 p-2 item11">
-                                <img src="{{ url_for('static', filename='images/works/bookmyshow.png') }}" alt="" class="image-fluid w-100">
-                                <div class="w_name col-lg-12 d-flex justify-content-center text-light">
-                                    <span>BookMyShow | Django</span>
-                                </div>
-                                <div class="github_bt col-lg-3 p-3">
-                                    <a href="https://github.com/Vysakh799/BookMyShow-Clone.git" class="btn btn-dark opacity-100" target="_blank"><i class="bi bi-github"></i></a>
-                                </div>
+                        <div class="social-icons col-lg-2 justify-content-evenly d-flex">
+                            <div class="facebook">
+                                <a href="https://www.facebook.com/vysakh.photographe" target="_blank"><i class="bi bi-facebook"></i></a>
                             </div>
-                            
-                        </div>
-                        <div class="col-lg-4 item1">
-                            <div class="image col-lg-12 p-2 item11">
-                                <img src="{{ url_for('static', filename='images/works/employee.png') }}" alt="" class="image-fluid w-100">
-                                <div class="w_name col-lg-12 d-flex justify-content-center text-light">
-                                    <span>Employee Management | Django</span>
-                                </div>
-                                <div class="github_bt col-lg-3  p-3">
-                                    <a href="https://github.com/Vysakh799/Django-Employee-management-system.git" class="btn btn-dark opacity-100" target="_blank"><i class="bi bi-github"></i></a>
-                                </div>
+                            <div class="whatsupp">
+                                <a href="https://wa.me/7994634647" target="_blank"><i class="bi bi-whatsapp"></i></a>
                             </div>
-                            
-                        </div>
-                    </div>
-                    <div class="first-row col-lg-12 d-flex justify-content-evenly flex-wrap mt-4">
-                        <div class="col-lg-4 item1 ">
-                            <div class="image col-lg-12 p-2 item11">
-                                <img src="{{ url_for('static', filename='images/works/nike.png') }}" alt="" class="image-fluid w-100">
-                                <div class="w_name col-lg-12 d-flex justify-content-center text-light">
-                                    <span>Nike Clone </span>
-                                </div>
-                                <div class="github_bt col-lg-3 p-3">
-                                    <a href="https://github.com/Vysakh799/Nike-clone.git" class="btn btn-dark opacity-100" target="_blank"><i class="bi bi-github"></i></a>
-                                </div>
+                            <div class="instagram">
+                                <a href="https://www.instagram.com/itsme.vysakh/" target="_blank"><i class="bi bi-instagram"></i></a>
                             </div>
-                            
-                        </div>
-                        <div class="col-lg-4 item1">
-                            <div class="image col-lg-12 p-2 item11">
-                                <img src="{{ url_for('static', filename='images/works/W3schools.png') }}" alt="" class="image-fluid w-100">
-                                <div class="w_name col-lg-12 d-flex justify-content-center text-light">
-                                    <span>W3 Schools Clone </span>
-                                </div>
-                                <div class="github_bt col-lg-3 p-3">
-                                    <a href="https://github.com/Vysakh799/W3school-clone.git" class="btn btn-dark opacity-100 " target="_blank"><i class="bi bi-github"></i></a>
-                                </div>
+                            <div class="twitter">
+                                <a href="https://x.com/itsme_vysakh" target="_blank"><i class="bi bi-twitter"></i></a>
                             </div>
-                            
-                        </div>
-                        <div class="col-lg-4 item1">
-                            <div class="image col-lg-12 p-2 item11 ">
-                                <img src="{{ url_for('static', filename='images/works/youtube.png') }}" alt="" class="image-fluid w-100">
-                                <div class="w_name col-lg-12 d-flex justify-content-center text-light">
-                                    <span>Youtube clone</span>
-                                </div>
-                                <div class="github_bt col-lg-3 p-3">
-                                    <a href="https://github.com/Vysakh799/Youtube-clone.git"  class="btn btn-dark opacity-100 " target="_blank"><i class="bi bi-github"></i></a>
-                                </div>
-                            </div>
-                            
                         </div>
                     </div>
                     
                 </div>
+    
+    
+    
+    
+    
+                 
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-12 p-4" id="contact" style="display: none;"> 
-                <div class="contact col-lg-12">
-                    <div class="heading">
-                        <p id="heading">Contact</p>
-                    </div>
-                </div>
-                <div class="form-group col-lg-6  p-3">
-                    <form action="../contact_me" method="POST" >
-                        <div class="col-lg-12">
-                            <label for="name">Name</label><br>
-                            <input type="text" name="name" class="inp w-100" style="background-color: transparent; color: white;" required>
-                        </div>
-                        <div class="col-lg-12 mt-3">
-                            <label for="name">Email</label><br>
-                            <input type="email" name="email" class=" w-100" style="background-color: transparent; color: white;" pattern="[a-z][a-z0-9]+@gmail.com" required>
-                        </div>
-                        <div class="col-lg-12 mt-3">
-                            <label for="name">Subject</label><br>
-                            <input type="text" name="subject" class=" w-100" style="background-color: transparent; color: white;" required>
-                        </div>
-                        <div class="col-lg-12 mt-3">
-                            <label for="name">Message</label><br>
-                            <textarea name="message" id="" style="background-color: transparent; color: white;" class="w-100" required></textarea>
-                        </div>
-                        <div class="col-lg-12 mt-3">
-                            <input type="submit" class="frm-bt w-100" value="Send" >
-                        </div>
-                    </form>
-
-                </div>
-                <div class="line col-lg-12">
-                    <hr style="color: grey;">
-                </div>
-                <div class="col-lg-12 d-flex flex-column align-items-center">
-                    <div class="address d-flex justify-content-center text-center">
-                        <p>Vysakham, Omasseryparamb, Near Poovannur mosque<br>Ramanattukara, Calicut, Kerala<br>India</p>
-                    </div>
-                    <div class="social-icons col-lg-2 justify-content-evenly d-flex">
-                        <div class="facebook">
-                            <a href="https://www.facebook.com/vysakh.photographe" target="_blank"><i class="bi bi-facebook"></i></a>
-                        </div>
-                        <div class="whatsupp">
-                            <a href="https://wa.me/7994634647" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                        </div>
-                        <div class="instagram">
-                            <a href="https://www.instagram.com/itsme.vysakh/" target="_blank"><i class="bi bi-instagram"></i></a>
-                        </div>
-                        <div class="twitter">
-                            <a href="https://x.com/itsme_vysakh" target="_blank"><i class="bi bi-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-
-
-
-
-             
-                </div>
+            
             </div>
         </div>
-        
         </div>
-    </div>
     </div>
 </body>
 </html> 
