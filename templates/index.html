@@ -97,7 +97,7 @@
                               {%endwith%}
         </div>
         <div class="content row p-5 d-flex justify-content-evenly">
-            <div class="col-lg-2 sidebar">
+            <div class="col-lg-2 sidebar " style="height: fit-content;">
                 <div class="col-lg-12 drop-down-bt d-flex justify-content-end">
                     <button class="btn btn-link text-warning btn1"  id="cnt1"><i class="bi bi-chevron-down"></i></button>
                     <button class="btn btn-link text-warning btn1"  id="cnt2" style="display: none;"><i class="bi bi-chevron-up"></i></button>
@@ -113,7 +113,7 @@
                         <div class="proff col-lg-12 d-flex justify-content-center">
                             <p>Web Developer</p>
                         </div>
-                            <a href="https://drive.google.com/file/d/1oj0FO-Uwn6uDCHmWDBggpjdmJpCMA8N3/view?usp=drive_link" class="btn btn-warning w-3" style="margin-top: -10px;" target="_blank
+                            <a href="https://drive.google.com/file/d/1fO2gCVtiKosmd-Sl8uanS9BXaduMS9D-/view?usp=drive_link" class="btn btn-warning w-3" style="margin-top: -10px;" target="_blank
                             ">Download CV</a>
                     </div>
                 </div>
@@ -355,6 +355,19 @@
                             </div>
                         </div>
                         <div class="first-row col-lg-12 d-flex justify-content-evenly flex-wrap mt-4">
+
+                            <div class="col-lg-4 item1 ">
+                                <div class="image col-lg-12 p-2 item11">
+                                    <img src="{{ url_for('static', filename='images/works/Seatmap.png') }}" alt="" class="image-fluid w-100">
+                                    <div class="w_name col-lg-12 d-flex justify-content-center text-light">
+                                        <span>SeatMap | Flask</span>
+                                    </div>
+                                    <div class="github_bt col-lg-3 p-3">
+                                        <a href="https://github.com/Vysakh799/Seat-map.git" class="btn btn-dark opacity-100" target="_blank"><i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                                
+                            </div>
                             <div class="col-lg-4 item1 ">
                                 <div class="image col-lg-12 p-2 item11">
                                     <img src="{{ url_for('static', filename='images/works/nike.png') }}" alt="" class="image-fluid w-100">
@@ -379,6 +392,8 @@
                                 </div>
                                 
                             </div>
+                        </div>
+                        <div class="first-row col-lg-12 d-flex flex-wrap mt-4">
                             <div class="col-lg-4 item1">
                                 <div class="image col-lg-12 p-2 item11 ">
                                     <img src="{{ url_for('static', filename='images/works/youtube.png') }}" alt="" class="image-fluid w-100">
