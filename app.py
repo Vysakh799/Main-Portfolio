@@ -45,4 +45,5 @@ def contact_me1():
         
     
     return redirect(url_for('index'))
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
